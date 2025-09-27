@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Desmos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="icon" type="image/x-icon" href="/images/Jabs.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="background"></div>
+    <p>Choose a game/site to play:</p>
+
+    <nav class="game-links">
+      <a href="/drivemad">Drive Mad</a>	
+      <a href="/RagdollArchers">Ragdoll Archers</a>
+      <a href="/Proxy">Proxy</a>
+      <a href="/EscapeRoad">Escape Road</a>
+    </nav>
+
+    <h1>
+      <a href="https://forms.gle/9wUFys1UfBd6SnTD8" target="_blank"
+        >SUBMIT GAME IDEAS HERE WILL TRY TO ADD</a
+  >
+    </h1>
+    <script>
+      // Generate stars dynamically
+      const numStars = 2300;
+      const background = document.getElementById('background');
+
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const size = Math.random() * 3;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+
+        // Randomize animation delay for natural look
+        star.style.animationDelay = `${Math.random() * 5}s`;
+
+        background.appendChild(star);
+      }
+    </script>
+  </body>
+</html>
